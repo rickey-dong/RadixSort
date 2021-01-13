@@ -29,5 +29,25 @@ public class RadixTesterRD
     System.out.println(Radix.length(-1111) + " should be 4");
     System.out.println(Radix.length(-11111) + " should be 5");
     System.out.println(Radix.length(-9) + " should be 1");
+    
+    System.out.println();
+    
+    MyLinkedList orig = new MyLinkedList();
+    orig.add("one");
+    MyLinkedList orig1 = new MyLinkedList();
+    MyLinkedList[] bucks = new MyLinkedList[3];
+    MyLinkedList buck0 = new MyLinkedList();
+    MyLinkedList buck1 = new MyLinkedList();
+    MyLinkedList buck2 = new MyLinkedList();
+    bucks[0] = buck0;
+    bucks[1] = buck1;
+    bucks[2] = buck2;
+    buck0.add("two");
+    buck0.add("three");
+    buck1.add("four");
+    buck1.add("five");
+    buck2.add("six");
+    Radix.merge(orig1, bucks);
+    System.out.println(orig1 + " should be [two, three, four, five, six]");
   }
 }
