@@ -30,17 +30,21 @@ public class Radix
     {
       buckets[i] = new SortableLinkedList();
     }
-    int maxPasses = 0;
-    for (int i = 0; i < data.size(); i++)
+    int maxPasses = 1;
+    /*for (int i = 0; i < data.size(); i++)
     {
       if (length(data.get(i)) > maxPasses)
       {
         maxPasses = length(data.get(i));
       }
-    }
+    }*/
     for (int j = 0; j < maxPasses; j++)
     {
       buckets[nth(data.get(0), j)].add(data.get(0));
+      if (length(data.get(0)) > maxPasses)
+      {
+        maxPasses = length(data.get(0));
+      }
       data.remove(0);
       j--;
       if (data.size() == 0)
@@ -59,16 +63,16 @@ public class Radix
     {
       buckets[i] = new SortableLinkedList();
     }
-    int maxPasses = 0;
-    for (int i = 0; i < data.size(); i++)
+    int maxPasses = 1;
+    /*for (int i = 0; i < data.size(); i++)
     {
       if (length(data.get(i)) > maxPasses)
       {
         maxPasses = length(data.get(i));
       }
-    }
+    }*/
     int key = 0;
-    for (int j = 0; j < maxPasses; j--)
+    for (int j = 0; j < maxPasses; j++)
     {
       if (data.get(0) < 0)
       {
@@ -79,6 +83,10 @@ public class Radix
         key = 9 + nth(data.get(0), j);
       }
       buckets[key].add(data.get(0));
+      if (length(data.get(0)) > maxPasses)
+      {
+        maxPasses = length(data.get(0));
+      }
       data.remove(0);
       j--;
       if (data.size() == 0)

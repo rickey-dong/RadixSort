@@ -1,3 +1,5 @@
+import java.util.*;
+import java.io.*;
 public class RadixTesterRD
 {
   public static void main(String[] args)
@@ -50,5 +52,15 @@ public class RadixTesterRD
     Radix.merge(orig1, bucks);
     System.out.println(orig1 + " should be [two, three, four, five, six]");*/
     System.out.println(Radix.nth(55,2) + " should be 0");
+    System.out.println();
+    Random rng = new Random(0);
+    SortableLinkedList l = new SortableLinkedList();
+    int c;
+    for (int i = 0; i < 1000; i++) {
+         c = rng.nextInt();
+         l.add(c);
+    }
+    Radix.radixSort(l);
+    System.out.println(l);
   }
 }
