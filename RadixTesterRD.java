@@ -32,7 +32,7 @@ public class RadixTesterRD
     
     System.out.println();
     
-    MyLinkedList orig = new MyLinkedList();
+    /*MyLinkedList orig = new MyLinkedList();
     orig.add("one");
     MyLinkedList orig1 = new MyLinkedList();
     MyLinkedList[] bucks = new MyLinkedList[3];
@@ -48,6 +48,7 @@ public class RadixTesterRD
     buck1.add("five");
     buck2.add("six");
     Radix.merge(orig1, bucks);
-    System.out.println(orig1 + " should be [two, three, four, five, six]");
+    System.out.println(orig1 + " should be [two, three, four, five, six]");*/
+    System.out.println(Radix.nth(55,2) + " should be 0");
   }
 }
